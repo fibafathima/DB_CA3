@@ -1,7 +1,21 @@
 // src/components/TaskForm.jsx
-import React from 'react';
+import React, { useState } from 'react';
+
 
 function TaskForm() {
+    const [title,setTitle] = useState("")
+    const [description,setDescription] = useState("")
+    const [checked,SetChecked] = useState(false)
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        
+        setTitle("")
+        setDescription("")
+        SetChecked(false)
+
+    }
+
     return (
         <form>
          <h1>Title</h1>
@@ -16,7 +30,7 @@ function TaskForm() {
         </div>
 
 
-         <button>Submit</button>
+         <button onSubmit={handleSubmit}>Submit</button>
             
         </form>
     );
